@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Java Compiler</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- Load Fira Code font with ligatures -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
+    <style>
+      /* Force ligatures on all editor elements */
+      .monaco-editor {
+        font-family: "Consolas", "Courier New", monospace !important;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="ide-container">
+      <div class="main-content">
+        <div class="editor-container" id="editor"></div>
+
+        <div class="resize-handle"></div>
+
+        <div class="bottom-panel">
+          <div class="panel-tabs">
+            <div class="tab active" onclick="showTab('output')">Output</div>
+          </div>
+          <div class="panel-content" id="output"></div>
+        </div>
+      </div>
+
+      <div class="status-bar">
+        <div class="status-item">Java</div>
+        <div class="status-item">UTF-8</div>
+        <div class="status-item">Ln 1, Col 1</div>
+      </div>
+    </div>
+
+    <!-- Load scripts in correct order -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/monaco-editor/0.45.0/min/vs/loader.min.js"></script>
+    <script src="js/compiler.js"></script>
+    <script src="js/shortcuts.js"></script>
+    <script src="js/java-lsp.js"></script>
+    <script src="js/editor.js"></script>
+    <script src="js/resize.js"></script>
+    <script src="js/script.js"></script>
+  </body>
+</html>

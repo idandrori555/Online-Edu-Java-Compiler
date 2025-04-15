@@ -1,0 +1,205 @@
+* {
+  box-sizing: border-box;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #1e1e1e;
+  color: #d4d4d4;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.ide-container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.editor-container {
+  flex: 1;
+  overflow: hidden;
+  min-height: 100px;
+}
+
+.resize-handle {
+  height: 6px;
+  background-color: #1e1e1e;
+  cursor: row-resize;
+  position: relative;
+  border-top: 1px solid #3c3c3c;
+  border-bottom: 1px solid #3c3c3c;
+}
+
+.resize-handle:hover {
+  background-color: #007acc;
+}
+
+.bottom-panel {
+  height: 300px;
+  min-height: 100px;
+  max-height: 80vh;
+  background-color: #1e1e1e;
+  border-top: 1px solid #3c3c3c;
+  display: flex;
+  flex-direction: column;
+  resize: vertical;
+  overflow: auto;
+}
+
+.panel-tabs {
+  display: flex;
+  background-color: #252526;
+  border-bottom: 1px solid #3c3c3c;
+  padding: 0 10px;
+}
+
+.tab {
+  padding: 8px 20px;
+  font-size: 11px;
+  color: #858585;
+  cursor: pointer;
+  border-bottom: 1px solid transparent;
+  font-weight: 500;
+}
+
+.tab:hover {
+  color: #d4d4d4;
+}
+
+.tab.active {
+  color: #d4d4d4;
+  border-bottom: 1px solid #007acc;
+}
+
+.panel-content {
+  flex: 1;
+  padding: 10px;
+  overflow: auto;
+  font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+.status-bar {
+  height: 22px;
+  background-color: #007acc;
+  display: flex;
+  align-items: center;
+  padding: 0 10px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.status-item {
+  margin-right: 20px;
+  color: #ffffff;
+}
+
+#output {
+  white-space: pre-wrap;
+  color: #d4d4d4;
+  font-family: 'Fira Code', 'Consolas', 'Courier New', monospace;
+  font-size: 14px;
+  line-height: 1.5;
+  font-weight: 400;
+  letter-spacing: 0.5px;
+}
+
+/* Enable Fira Code ligatures */
+.monaco-editor {
+  font-family: 'Fira Code', monospace !important;
+  font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss04" 1, "ss05" 1, "ss06" 1, "ss07" 1 !important;
+}
+
+/* Apply ligatures to all code elements */
+.monaco-editor .view-lines {
+  font-family: 'Fira Code', monospace !important;
+  font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss04" 1, "ss05" 1, "ss06" 1, "ss07" 1 !important;
+}
+
+/* Apply ligatures to the editor content */
+.monaco-editor .view-line {
+  font-family: 'Fira Code', monospace !important;
+  font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss04" 1, "ss05" 1, "ss06" 1, "ss07" 1 !important;
+}
+
+/* Apply ligatures to the editor text */
+.monaco-editor .mtk1, .monaco-editor .mtk2, .monaco-editor .mtk3, .monaco-editor .mtk4, .monaco-editor .mtk5, .monaco-editor .mtk6, .monaco-editor .mtk7, .monaco-editor .mtk8, .monaco-editor .mtk9, .monaco-editor .mtk10 {
+  font-family: 'Fira Code', monospace !important;
+  font-feature-settings: "liga" 1, "calt" 1, "ss01" 1, "ss02" 1, "ss03" 1, "ss04" 1, "ss05" 1, "ss06" 1, "ss07" 1 !important;
+}
+
+/* Compile button styles */
+.compile-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    background-color: #007acc;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    padding: 6px 12px;
+    margin-left: 10px;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+}
+
+.compile-button svg {
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+.compile-button:hover {
+    background-color: #0098ff;
+}
+
+.compile-button:disabled {
+    background-color: #555555;
+    cursor: not-allowed;
+}
+
+.compile-button.compiling {
+    background-color: #555555;
+    cursor: wait;
+}
+
+/* Compiling indicator styles */
+.compiling-indicator {
+    display: flex;
+    align-items: center;
+    color: #d4d4d4;
+    font-size: 14px;
+    padding: 10px;
+}
+
+.spinner {
+    width: 16px;
+    height: 16px;
+    margin-right: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: #ffffff;
+    animation: spin 1s ease-in-out infinite;
+}
+
+@keyframes spin {
+    to { transform: rotate(360deg); }
+}
