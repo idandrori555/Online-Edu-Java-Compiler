@@ -54,13 +54,6 @@ These implementations are provided in Java and can be found in the `Edu/` direct
 
 The server will be available at `http://localhost:3000` 🌐
 
-## ⚙️ Configuration
-
-- 🔌 The server runs on port 3000 by default
-- 🛠️ TypeScript configuration can be found in `tsconfig.json`
-
----
-
 ### 🌟 Features
 
 - 🔄 Hot reloading in development
