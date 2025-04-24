@@ -32,7 +32,7 @@ These implementations are provided in Java and can be found in the `Edu/` direct
 
 2. Start the development server:
    ```bash
-   deno task dev
+   deno task start
    ```
 
 ### 🐳 Using Docker
