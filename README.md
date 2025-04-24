@@ -15,28 +15,24 @@ These implementations are provided in Java and can be found in the `Edu/` direct
 
 ## ⚡ Prerequisites
 
-- Node.js (v18 or later)
+- Deno (v1.37 or later)
 - Docker (optional)
+- Java JDK 17 (for running Java implementations)
 
 ## 🎯 Getting Started
 
 ### 💻 Local Development
 
-1. Install dependencies:
+1. Install Deno:
 
    ```bash
-   npm install
+   # Windows (PowerShell)
+   irm https://deno.land/install.ps1 | iex
    ```
 
-2. Build the TypeScript code:
-
+2. Start the development server:
    ```bash
-   npm run build
-   ```
-
-3. Start the server:
-   ```bash
-   npm start
+   deno task dev
    ```
 
 ### 🐳 Using Docker
@@ -59,7 +55,8 @@ The server will be available at `http://localhost:3000` 🌐
 - 🔄 Hot reloading in development
 - 🔒 TypeScript for type safety
 - 🐳 Docker support for easy deployment
-- 📦 Modern JavaScript features
+- 📦 Native TypeScript/JavaScript runtime with Deno
+- 🔐 Secure by default with explicit permissions
 
 ### 📫 Support
 

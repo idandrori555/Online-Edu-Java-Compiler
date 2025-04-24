@@ -13,11 +13,8 @@ RUN apt-get update && \
 # Copy the entire project to the working directory
 COPY . .
 
-# Build the project
-RUN deno task build
-
 # Expose the port your application runs on
 EXPOSE 3000
 
 # Set the default command to run your application
-CMD ["task", "preview"]
+CMD ["task", "start"]
