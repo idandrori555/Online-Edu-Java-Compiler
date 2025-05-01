@@ -29,6 +29,13 @@ These implementations are provided in Java and can be found in the `Edu/` direct
    # Windows (PowerShell)
    irm https://deno.land/install.ps1 | iex
    ```
+   
+   ```bash
+   # npm
+   npm install -g deno
+   ```
+
+   More on [Deno official docs](https://docs.deno.com/runtime/getting_started/installation/)
 
 2. Start the development server:
    ```bash
